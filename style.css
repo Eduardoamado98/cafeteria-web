@@ -1,11 +1,20 @@
-body {
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     background-color: #fffaf0;
     color: #333;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
+/* Header */
 header {
     background-color: #6b4f36;
     color: white;
@@ -16,17 +25,24 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
+nav ul li {
+    margin: 0;
+}
+
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
 }
 
+/* Hero section */
 .hero {
     position: relative;
     height: 100vh;
@@ -36,13 +52,12 @@ nav a {
     text-align: center;
     color: white;
     overflow: hidden;
-    padding: 100px 20px;
+    padding: 0 20px;
 }
 
 .bg-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -53,14 +68,17 @@ nav a {
 .hero-content {
     position: relative;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 3rem;
     border-radius: 10px;
     max-width: 90%;
 }
 
+/* Sections */
 section {
     padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -68,13 +86,14 @@ section {
     margin: 20px 0;
 }
 
+/* Form */
 form {
     max-width: 400px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 90%;
+    gap: 15px;
+    width: 100%;
 }
 
 form input,
@@ -82,52 +101,88 @@ form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+    width: 100%;
 }
 
 form button {
-    padding: 10px;
+    padding: 12px;
     background-color: #6b4f36;
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+form button:hover {
+    background-color: #553d29;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 15px 0;
+    font-size: 0.9rem;
 }
 
-video {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Responsive design */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .hero-content {
+        padding: 1.5rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
 }
 
-/* ------------------------- */
-/* RESPONSIVE DESIGN MOBILE */
-/* ------------------------- */
-
+/* Smartphones */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         align-items: center;
         gap: 10px;
         padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
 
     .hero {
         height: auto;
-        padding: 60px 15px;
+        padding: 50px 15px 60px;
     }
 
     .hero-content {
         font-size: 1rem;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    section {
+        padding: 30px 15px;
     }
 
     form {
+        max-width: 100%;
         width: 100%;
+        padding: 0 10px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1rem;
     }
 }
