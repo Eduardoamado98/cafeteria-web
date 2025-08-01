@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafetería La Esquina</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
     <header>
-        <h1>Cafetería La Esquina</h1>
+        <h1 class="animate__animated animate__fadeInDown">Cafetería La Esquina</h1>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -19,33 +25,33 @@
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" data-aos="fade-up">
         <h2>El mejor café de la ciudad</h2>
         <p>Despierta tus sentidos con nuestros sabores artesanales.</p>
     </section>
 
     <section id="menu">
-        <h2>Menú</h2>
-        <div class="menu-item">
+        <h2 data-aos="zoom-in">Menú</h2>
+        <div class="menu-item" data-aos="fade-right">
             <h3>Café Espresso</h3>
             <p>$2.50</p>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" data-aos="fade-right" data-aos-delay="100">
             <h3>Capuccino</h3>
             <p>$3.00</p>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" data-aos="fade-right" data-aos-delay="200">
             <h3>Pastel de Zanahoria</h3>
             <p>$4.00</p>
         </div>
     </section>
 
-    <section id="nosotros">
+    <section id="nosotros" data-aos="fade-up">
         <h2>Sobre Nosotros</h2>
         <p>Somos una cafetería local dedicada a brindar experiencias inolvidables a través del sabor y el aroma de un buen café.</p>
     </section>
 
-    <section id="contacto">
+    <section id="contacto" data-aos="fade-up">
         <h2>Contacto</h2>
         <form>
             <input type="text" placeholder="Tu nombre" required>
@@ -55,9 +61,15 @@
         </form>
     </section>
 
-    <footer>
+    <footer data-aos="fade-in">
         <p>&copy; 2025 Cafetería La Esquina. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <script src="script.js"></script>
 </body>
